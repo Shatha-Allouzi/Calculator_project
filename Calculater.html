@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <script>
+            let p=false ; 
+
+         function display(value)
+         { document.getElementById("answer").value+=value;
+
+         if (value =='.')
+         {p= true;}
+
+         }
+        
+         function calculate()
+         { document.getElementById("answer").value = eval(document.getElementById("answer").value) ;}
+
+           function clearDisplay() 
+            {
+              document.getElementById('answer').value=" ";
+              p=false; 
+            }
+         function point ()
+         {if (!p)
+            {
+               display('.');
+            }
+         }
+        </script>
+        <style>
+table{
+   
+    font-size: 30px;
+    background-color:#dad3e7;
+    margin:auto;
+    border-color: black;
+}
+
+button{
+    font-size: 30px;
+    width: 100px;
+    height:100px ;
+}
+
+        </style>
+    </head>
+
+    <body style="margin-top:100px;font-size: 30px;">
+        
+        <table style="border:1px;">
+        <div id="buttons">
+
+            <tr>
+            <td style="width: 100px; height: 100px;text-align: center;">Answer</td>
+            <td style="width: 100px; height: 100px;" colspan="3"; ><input  style="width: 320px; height: 100px;" type="text" id="answer"></td>
+            </tr>
+
+            <tr>
+            <td><button onclick="display('9')" name="9">9</button></td>
+            <td><button onclick="display('8')" name="8">8</button></td>
+            <td><button onclick="display('7')"  name="7">7</button></td>
+            <td><button onclick="display('+')" name="+">+</button></td>
+            </tr>
+
+            <tr>
+                <td><button onclick="display('6')" name="6">6</button></td>
+                <td><button onclick="display('5')" name="5">5</button></td>
+                <td><button onclick="display('4')" name="4">4</button></td>
+                <td><button onclick="display('-')" name="-">-</button></td>
+            </tr>
+
+        <tr>
+            <td><button onclick="display('3')" name="3">3</button></td>
+            <td><button onclick="display('2')" name="2">2</button></td>
+            <td><button onclick="display('1')" name="1">1</button></td>
+            <td><button onclick="display('*')" name="*">*</button></td>
+        </tr>
+
+        <tr>
+        <td><button onclick="display('0')" name="0">0</button></td>
+        <td><button onclick="display('/')" name="/">/</button></td>
+        <td><button onclick="calculate()" name="=">=</button></td>
+        <td><button onclick="clearDisplay()" id="clc">CE</button></td>
+       </tr>
+
+        <tr>
+            <td><button onclick="point()" name=".">.</button></td>
+            <td><button onclick="display('(')">(</button></td>
+            <td><button onclick="display(')')">)</button></td>
+        </tr>
+        </div>
+    </table>
+    </body>
+</html>
